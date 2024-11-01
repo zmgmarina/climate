@@ -1,0 +1,592 @@
+@import "_mixins";
+@import "var";
+
+.container-services {
+  padding-left: 16px;
+  padding-right: 16px;
+  
+
+  &__breadcrumb {
+    background-color: #fff;
+    padding-top: 30px;
+    @include respond(phone) {
+      padding-top: 10px;
+    }
+    }
+
+  &__breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-weight: normal;
+    font-size: 15px;
+    color: #83afcb;
+    padding-left: 30px;
+  
+    @include respond(tab-tab) {
+      font-size: 13px;
+    }
+
+    @include respond(tab-port) {
+      font-size: 11px;
+    }
+    @include respond(phone) {
+      padding-left: 10;
+      font-size: 10px;
+    }
+  }
+
+  &__breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.5rem;
+    content: ">";
+  }
+
+  &__breadcrumb-activeLink {
+    font-weight: normal;
+    font-size: 15px;
+    color: #565757;
+    text-decoration-line: underline;
+    @include respond(tab-tab) {
+      font-size: 13px;
+    }
+    @include respond(tab-port) {
+      font-size: 11px;
+    }
+    @include respond(phone) {
+      font-size: 10px;
+    }
+  }
+}
+
+.title-box {
+  background-color: #fff;
+  padding-top: 90px;
+  @include respond(tab-pad) {
+    padding-top: 40px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 38px;
+    background-image: linear-gradient(to top, #7caac7 50%, #e7e7e7);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 40px;
+    justify-content: center;
+    @include respond(tab-max) {
+      font-size: 40px;
+      padding-bottom: 40px;
+    }
+    @include respond(tab-tab) {
+      font-size: 38px;
+    }
+     @include respond(tab-pad) {
+      font-size: 32px;
+      padding-bottom: 20px;
+    }
+      @include respond(hab-max) {
+       margin-top: 70px;
+      }
+      @include respond(tab-port) {
+       margin-top: 50px;
+      }
+      @include respond(phone) {
+       margin-top: 0;
+       font-size: 26px;
+      }
+  }
+}
+
+.section-price {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  
+  @include respond(tab-max) {
+    padding-bottom: 120px;
+  }
+  @include respond(hab-max) {
+   flex-direction: column;
+     gap: 426px;
+     align-items: center; 
+     padding-bottom: 40px;
+  }
+  @include respond(tab-port) {
+      padding-bottom: 10px;
+      gap: 360px;
+      padding-top: 40px;
+    }
+    @include respond(phone) {
+      gap: 310px;
+      padding-top: 20px;
+    }
+ 
+
+  &__composition {
+    width: 500px;
+    position: relative;
+    padding-left: 40px;
+    @include respond(tab-max) {
+      width: 300px;
+    }
+    @include respond(tab-tab) {
+      padding-left: 0;
+    }
+  
+  }
+
+  &__photo {
+    width: 220px;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 15px 10px rgba(53, 52, 52, 0.2);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.02s;
+    @include respond(tab-max) {
+      width: 230px;
+    }
+    @include respond(tab-land) {
+      width: 220px;
+    }
+    @include respond(tab-tab) {
+      width: 200px;
+    }
+    @include respond(hab-max) {
+      width: 250px;
+    }
+     @include respond(tab-port) {
+      width: 170px;
+    }
+     @include respond(phone) {
+      width: 135px;
+    }
+   
+
+    &_n1 {
+      top: 0;
+      left: 27rem;
+      @include respond(tab-max) {
+        left: 27rem;
+      }
+      @include respond(tab-land) {
+        left: 24rem;
+      }
+      @include respond(tab-tab) {
+        left: 25rem;
+      }
+      @include respond(hab-max) {
+        left: 15rem;
+      }
+      @include respond(tab-port) {
+        left: 14rem;
+      }
+      @include respond(phone) {
+        left: 11rem;
+      }
+    }
+    &_n2 {
+      top: 1rem;
+      right: 14rem;
+      @include respond(tab-max) {
+        right: 1rem;
+      }
+      @include respond(tab-tab) {
+        right: 3rem;
+      }
+      @include respond(hab-max) {
+        right: 17rem;
+      }
+      @include respond(tab-port) {
+        left: -6rem;
+      }
+      @include respond(phone) {
+        left: -1rem;
+      }
+    }
+
+    &_n3 {
+      top: 6rem;
+      left: 15rem;
+      @include respond(tab-tab) {
+        left: 14rem;
+      }
+      @include respond(hab-max) {
+        left: 1rem;
+      }
+      @include respond(tab-port) {
+        left: 4rem;
+      }
+      @include respond(phone) {
+        left: 5rem;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      z-index: 8;
+    }
+  }
+
+  &__text-price {
+    padding-top: 50px;
+    padding-right: 20px;
+    text-align: center;
+    
+    @include respond(tab-tab) {
+      padding-right: 20px;
+    }
+    @include respond(hab-max) {
+      padding-right: 10px;
+    }
+     @include respond(tab-port) {
+      padding-right: 0;
+      padding-top: 10px;
+    }
+     @include respond(phone) {
+      width: 370px;
+    } 
+}
+
+  &__subtitle {
+    font-weight: 600;
+    color: $serviceTitleColor;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    @include respond(tab-max) {
+      font-size: 26px;
+    }
+    @include respond(tab-tab) {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    @include respond(hab-max) {
+      font-size: 26px;
+    }
+    @include respond(tab-port) {
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    @include respond(phone) {
+      font-size: 18px;
+      padding-bottom: 0;
+      font-weight: 400;
+      
+    }
+  }
+
+  &__price {
+    padding-left: 30px;
+    @include respond(tab-max) {
+      padding-right: 16px;
+    }
+     @include respond(hab-max) {
+      padding-left: 80px;
+    }
+    @include respond(tab-pad) {
+      list-style-type: none;
+      padding-left: 0;
+    }
+     @include respond(phone) {
+      padding-left: 50px;
+      padding-right: 38px;
+    }
+  }
+
+  &__li-price {
+    padding-bottom: 25px;
+    font-size: 26px;
+    color: rgb(100, 104, 102);
+    @include respond(tab-max) {
+      font-size: 22px;
+    }
+    @include respond(tab-tab) {
+      font-size: 20px;
+    }
+    @include respond(tab-pad) {
+      font-size: 18px;
+    }
+    @include respond(tab-port) {
+      font-size: 16px;
+    }
+    @include respond(phone) {
+      // font-size: 16px;
+    }
+  }
+
+  &__price-span {
+    color: #ea5c5c;
+  }
+
+  &__price li::marker {
+    color: $serviceTitleColor;
+    font-size: 22px;
+    @include respond(tab-pad) {
+      list-style-type: none;
+    }
+  }
+}
+
+.section-schemes {
+  padding-top: 100px;
+  background-color: #fff;
+  
+  @include respond(tab-tab) {
+    padding-bottom: 40px;
+  }
+  @include respond(hab-max) {
+    padding-top: 50px;
+  }
+   @include respond(tab-port) {
+    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    color: $serviceTitleColor;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    @include respond(tab-max) {
+      font-size: 26px;
+      padding-bottom: 40px;
+    }
+    @include respond(tab-tab) {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    @include respond(hab-max) {
+      padding-bottom: 30px;
+       font-size: 26px;
+       margin-bottom: 20px;
+    }
+    @include respond(tab-port) {
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    @include respond(phone) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__schemes-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    @include respond(hab-max) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond(tab-tab) {
+      padding-bottom: 0px;
+    }
+    @include respond(hab-max) {
+         padding-bottom: 20px;
+      }
+    @include respond(tab-port) {
+      padding-bottom: 0;
+      
+    }
+   }
+
+  &__box-description {
+    padding-bottom: 40px;
+    padding-right: 20px;
+    max-width: 50%;
+   
+    @include respond(hab-max) {
+    max-width: 100%;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    }
+  }
+
+  &__schemes-title {
+    font-weight: 500;
+    color: rgb(141, 189, 223);
+    font-size: 28px;
+    text-align: center;
+    text-align: center;
+    @include respond(tab-max) {
+      font-size: 24px;
+    }
+    @include respond(tab-tab) {
+      font-size: 22px;
+      font-weight: 400;
+    }
+     @include respond(tab-port) {
+      font-size: 18px;
+    }
+  }
+
+  &__schemes-description {
+    font-size: 19px;
+    line-height: 30px;
+    color: rgb(89, 91, 90);
+    padding: 30px 20px 5px 30px;
+    text-indent: 40px;
+    @include respond(tab-tab) {
+      font-size: 17px;
+      font-weight: 400;
+      padding-top: 10px;
+    }
+    @include respond(hab-max) {
+      font-size: 19px;
+      
+    }
+    @include respond(tab-pad) {
+      font-size: 16px;
+      padding: 30px 30px 5px;
+    }
+    @include respond(tab-port) {
+      padding-top: 12px;
+    }
+  }
+
+  &__schemes {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    width: 50%;
+    height: 200px;
+    padding-top: 20px;
+    padding-right: 20px;
+    @include respond(hab-max) {
+      gap: 40px;
+      padding-top: 0px;
+      height: 180px;
+      width: 60%;
+    }
+    @include respond(tab-port) {
+      height: 160px;
+      width: 55%;
+    }
+    @include respond(tab-port) {
+      height: 160px;
+      width: 70%;
+      gap: 20px;
+    }
+    @include respond(phone) {
+      height: 115px;
+    }
+  }
+
+  &__schemes-image {
+    width: 32%;
+  }
+}
+
+.section-typesWorks {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  margin-bottom: 30px;
+
+  @include respond(tab-tab) {
+      padding-bottom: 20px;
+    }
+  @include respond(hab-max) {
+    flex-direction: column;
+     padding-top: 20px;
+     padding-bottom: 70px;
+  }
+  @include respond(tab-pad) {
+    margin-bottom: 0;
+  }
+
+
+  &__text {
+    width: 55%;
+    padding-left: 50px;
+    @include respond(tab-tab) {
+      width: 53%;
+    }
+    @include respond(hab-max) {
+     width: 100%; 
+     padding-right: 10px;
+    }
+    @include respond(hab-max) {
+     width: 98%; 
+     padding-right: 10px;
+    }
+
+  }
+
+  &__subtitle-box {
+    background-color: #ffffff;
+  }
+
+  &__subtitle {
+    color: $serviceTitleColor;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  
+    @include respond(tab-max) {
+      font-size: 26px;
+      padding-bottom: 30px;
+    }
+    @include respond(tab-tab) {
+      font-weight: 500;
+      font-size: 24px;
+    }
+     @include respond(tab-pad) {
+      font-size: 20px;
+      padding-top: 0px;
+       padding-bottom: 10px;
+    }
+    @include respond(phone) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  &__li-typesWork {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(89, 91, 90);
+    padding-bottom: 15px;
+    line-height: 30px;
+    @include respond(tab-max) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include respond(tab-tab) {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 8px;
+    }
+    @include respond(hab-max) {
+      font-size: 18px;
+    }
+    @include respond(tab-pad) {
+      font-size: 16px;
+    }
+  }
+
+  &__typesWorks li::marker {
+    color: rgb(114, 210, 206);
+    font-size: 25px;
+   
+  }
+}
+
+

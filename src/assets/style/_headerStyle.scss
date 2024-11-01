@@ -1,0 +1,423 @@
+@import "_mixins";
+@import "var";
+
+.navigation {
+  &__toggle {
+    display: none;
+  }
+
+  &__button {
+    background-color: #a1d7ee;
+    height: 3.4rem;
+    width: 3.3rem;
+    border-radius: 50%;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    position: fixed;
+    display: none;
+    @include respond(tab-port) {
+      display: block;
+      margin-top: -7px;
+      right: 9px;
+    }
+    @include respond(phone) {
+      height: 3rem;
+      width: 3rem;
+      right: 140rem;
+    }
+  }
+
+  &__background {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    position: fixed;
+    background: radial-gradient(#c6f9f7, #0977c6);
+    top: 1.1rem;
+    right: 1.2rem;
+    z-index: 100;
+    transition: all 0.7s;
+    display: none;
+    @include respond(tab-port) {
+      display: block;
+      margin-top: -4px;
+      right: 10px;
+    }
+    @include respond(phone) {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 150;
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    transition: all 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  &__icon {
+    display: none;
+    background-color: #171717;
+    height: 1px;
+    width: 20px;
+    position: absolute;
+    top: -2px;
+    right: 16px;
+    &::after,
+    &::before {
+      content: "";
+      background-color: #171717;
+      height: 1px;
+      width: 20px;
+      display: block;
+    }
+    &::after {
+      transform: translateY(1rem);
+    }
+    &::before {
+      transform: translateY(0.5rem);
+    }
+
+    @include respond(tab-port) {
+      display: block;
+      margin-top: 20px;
+    }
+    @include respond(phone) {
+      margin-top: 17px;
+      right: 14px;
+    }
+  }
+
+  &__menu-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+    padding: 8px 20px;
+    margin-bottom: 10px;
+  }
+
+  &__menu-link {
+    &:link,
+    &:visited {
+      font-size: 20px;
+      color: #fefefe;
+      text-transform: uppercase;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        rgb(255, 255, 255) 50%
+      );
+      background-size: 220%;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: #60b6eb;
+      transform: translateX(0.5rem);
+    }
+  }
+
+  &__toggle:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__toggle:checked ~ &__nav {
+    width: 100%;
+    opacity: 1;
+  }
+
+  &__toggle:checked + &__button &__icon {
+    background: transparent;
+    top: 3.5px;
+    right: 15px;
+  }
+
+  &__toggle:checked + &__button &__icon::before {
+    transform: rotate(135deg);
+  }
+
+  &__toggle:checked + &__button &__icon::after {
+    transform: rotate(-135deg);
+  }
+
+  &__contacts {
+    padding-top: 40px;
+  }
+
+  &__phone-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__phone-icon {
+    width: 30px;
+  }
+
+  &__number-phone {
+    font-size: 20px;
+    color: #1c79fb;
+    &:hover {
+      color: #5ebdf0;
+    }
+  }
+}
+
+.header {
+  &__header-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__left-section {
+    background-color: #aeaba9;
+    width: 40%;
+    @include respond(phone) {
+      width: 30%;
+    }
+  }
+
+  &__logo {
+    margin-top: 5px;
+  }
+
+  &__image {
+    width: 60%;
+  }
+
+  &__logo-img {
+    height: 150px;
+    @include respond(tab-max) {
+      // height: 130px;
+    }
+    @include respond(hab-max) {
+      height: 130px;
+    }
+    @include respond(tab-pad) {
+      height: 110px;
+    }
+    @include respond(tab-port) {
+      height: 70px;
+      padding-left: 15px;
+    }
+    @include respond(phone) {
+      height: 40px;
+      padding-left: 35px;
+    }
+  }
+
+  &__slogan-box {
+    padding: 80px 20px 0;
+
+    @include respond(tab-tab) {
+      padding: 55px 20px 0;
+    }
+    @include respond(tab-pad) {
+      padding: 30px 20px 0;
+    }
+
+    @include respond(phone) {
+      padding: 10px 5px 5px 37px;
+    }
+  }
+
+  &__slogan {
+    font-weight: 300;
+    font-size: 27px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+
+    @include respond(hab-max) {
+      font-size: 2vw;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #fff;
+  @include respond(tab-port) {
+    height: 0px;
+  }
+
+  &__menu-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-pad) {
+    }
+    @include respond(tab-port) {
+      visibility: hidden;
+    }
+  }
+  &__menu-link {
+    display: flex;
+    align-items: center;
+    color: $linkColor;
+    font-size: 18px;
+
+    @include respond(tab-tab) {
+      font-size: 16px;
+    }
+    @include respond(tab-pad) {
+    }
+  }
+
+  &__menu-link:hover {
+    color: $linkHoverColor;
+  }
+
+  &__span-img {
+    display: inline-flex;
+    width: 22px;
+  }
+
+  &__dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  &__dropdown-link {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 20px 16px;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5%;
+    background-color: #fff;
+    width: 200px;
+    @include respond(tab-tab) {
+      width: 170px;
+      padding: 12px;
+    }
+    @include respond(tab-pad) {
+      width: 170px;
+      padding: 12px;
+      right: -10px;
+    }
+  }
+
+  &__catalog-menu-link {
+    display: block;
+    font-size: 18px;
+    color: #aeaba9;
+    &:hover {
+      text-decoration-line: underline;
+      color: #6fa8d1;
+    }
+    @include respond(tab-tab) {
+      font-size: 15px;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  @include respond(tab-max) {
+    gap: 5px;
+  }
+  @include respond(tab-tab) {
+    padding-left: 30px;
+  }
+
+  @include respond(tab-port) {
+    visibility: hidden;
+  }
+
+  &__phone-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__number-phone {
+    font-size: 20px;
+    color: $linkHoverColor;
+    @include respond(tab-max) {
+      font-size: 20px;
+    }
+    @include respond(tab-tab) {
+      font-size: 16px;
+    }
+    @include respond(tab-pad) {
+      font-size: 15px;
+    }
+  }
+
+  &__socialNetwork {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 25px;
+    @include respond(hab-max) {
+      gap: 20px;
+    }
+    @include respond(tab-pad) {
+      gap: 15px;
+    }
+  }
+
+  &__icons {
+    width: 28px;
+    transition: 0.2s linear;
+    @include respond(tab-max) {
+      // width: 35px;
+    }
+    @include respond(tab-tab) {
+      // width: 30px;
+    }
+    @include respond(hab-max) {
+      width: 20px;
+    }
+    @include respond(tab-pad) {
+      // width: 20px;
+    }
+  }
+
+  &__icons:active {
+    width: 42px;
+    transition: 0.2s linear;
+    @include respond(tab-max) {
+      width: 37px;
+    }
+  }
+}

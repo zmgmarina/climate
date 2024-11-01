@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.content-box {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.content-box__heading {
+  background: #ffffff;
+  width: 100%;
+  height: 80px;
+}
+.content-box__card-image {
+  height: 100px;
+}
+.content-box__slide-card {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.content-box__card-model {
+  width: 150px;
+  color: #000;
+}/*# sourceMappingURL=catalogStyle.css.map */

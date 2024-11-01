@@ -1,0 +1,110 @@
+@import "_mixins";
+@import "var";
+
+.card-product {
+  
+
+  &__product-box {
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    @include respond(phone) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__model-product {
+    padding: 60px 30px;
+    font-size: 28px;
+    background-image: linear-gradient(to top, #74a3bf 70%, #e1dfdf);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+  }
+
+  &__top-section {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding-left: 30px;
+  }
+
+  &__line {
+    margin: 40px 40px 0 40px;
+    border-top: 1px solid #d7d6d6;
+  }
+
+  &__box-specifications {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+    padding-right: 30px;
+    padding-top: 10px;
+    line-height: 22px;
+  }
+
+  &__price {
+    padding: 10px 15px;
+    color: #fcfbfb;
+    font-size: 18px;
+    background-color: rgb(245, 124, 124);
+    width: 120px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__specifications-item {
+    font-size: 14px;
+    color: rgb(119, 122, 121);
+  }
+
+  &__box-description {
+    padding-top: 70px;
+    padding-left: 50px;
+  }
+
+  &__description-title {
+    color: #74a3bf;
+    padding-left: 40px;
+    padding-bottom: 30px;
+  }
+
+  &__description-box-text {
+    padding-right: 30px;
+    text-indent: 40px;
+  }
+
+  &__description-text {
+    font-size: 16px;
+    color: rgb(99, 148, 178);
+    padding-bottom: 15px;
+    text-indent: 40px;
+    line-height: 28px;
+  }
+
+  &__description-list {
+    padding-left: 30px;
+    // width: 95%;
+    padding-right: 30px;
+    
+  }
+
+  &__description-list li::marker {
+    font-size: 22px;
+    
+  }
+
+  &__description-item {
+    padding-left: 10px;
+    font-size: 16px;
+    color: rgb(99, 148, 178);
+    padding-bottom: 15px;
+    line-height: 24px;
+   
+  }
+   
+  
+}

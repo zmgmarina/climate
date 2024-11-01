@@ -1,0 +1,27 @@
+@import 'headerStyle';
+@import 'homeStyle';
+@import 'servicesStyle';
+@import 'footerStyle';
+@import 'slider';
+@import 'catalogStyle';
+@import 'cardProductStyle';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    background: rgb(241, 246, 249);
+  }
+  
+  .center {
+    padding-left: calc(50% - 1400px / 2);
+    padding-right: calc(50% - 1400px / 2);
+    
+  }

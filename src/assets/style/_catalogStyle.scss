@@ -1,0 +1,243 @@
+@import "_mixins";
+@import "var";
+
+.catalog-container {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 30px;
+ 
+
+  &__breadcrumb {
+    padding: 0 0.5rem 0 0;
+    background-color: #fff;
+    padding-top: 30px;
+    @include respond(phone) {
+      padding-top: 10px;
+    }
+  }
+
+  &__breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-weight: normal;
+    font-size: 15px;
+    color: #83afcb;
+    padding-left: 30px;
+  
+    @include respond(tab-tab) {
+      font-size: 13px;
+    }
+
+    @include respond(tab-port) {
+      font-size: 11px;
+    }
+    @include respond(phone) {
+      padding-left: 16px;
+      font-size: 10px;
+    }
+  }
+
+  &__breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.5rem;
+    content: ">";
+  }
+
+  &__breadcrumb-activeLink {
+    font-weight: normal;
+    font-size: 15px;
+    color: #565757;
+    text-decoration-line: underline;
+    @include respond(tab-tab) {
+      font-size: 13px;
+    }
+    @include respond(tab-port) {
+      font-size: 11px;
+    }
+    @include respond(phone) {
+      font-size: 10px;
+    }
+  }
+
+  &__heading {
+    background-color: #ffffff;
+  }
+
+  &__catalog-title {
+    font-size: 14px;
+    background-image: linear-gradient(to top, #74a3bf 20%, #e1dfdf);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    
+    @include respond(tab-port) {
+      font-size: 14px;
+    }
+    @include respond(phone) {
+      font-size: 12px;
+      padding-left: 16px;
+      padding-top: 50px;
+    }
+  }
+
+  
+
+  &__heading-box {
+    background-image: linear-gradient(to top, $linkHoverColor 0%, #b6b6b5 100%);
+    width: 100%;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    font-size: 25px;
+ 
+    @include respond(tab-pad) {
+      font-size: 20px;
+    }
+    @include respond(tab-port) {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+    }
+    @include respond(phone) {
+      font-size: 13px;
+      padding-left: 16px;
+    }
+  }
+
+ &__brands-title {
+    // color: #363535;
+     color: #ffffff;
+  }
+
+  &__brands-title:hover {
+    color: #7b7b7a;
+    transition: 0.2s linear;
+  }
+
+  &__product-amount {
+    font-size: 15px;
+    padding-left: 20px;
+    color: #ffffff;
+    @include respond(tab-pad) {
+      font-size: 12px;
+    }
+    @include respond(tab-port) {
+      font-size: 10px;
+    }
+  }
+
+  &__product-amount:hover {
+    color: #7b7b7a;
+    transition: 0.2s linear;
+  }
+
+  &__swiper-box {
+    background: #efeded;
+    padding: 40px 20px;
+    @include respond(phone) {
+      padding: 15px 0;
+    }
+  }
+
+  &__slide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px -3px rgba(0, 0, 0, 0.2);
+    @include respond(phone) {
+      width: 120px;
+    }
+  }
+
+  &__card-link {
+    height: 140px;
+    @include respond(phone) {
+      height: 100px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__card-model {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3272cb;
+    padding: 0 25px;
+    &:hover {
+      color: #45c5ba;
+      transition: 0.2s linear;
+    }
+    @include respond(tab-land) {
+      font-size: 12px;
+      font-weight: 500;
+    }
+       @include respond(tab-port) {
+      font-size: 11px;
+      font-weight: 400;
+    }
+  }
+
+  &__card-image {
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    
+  }
+
+  &__iconFactory {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #f85656;
+    padding: 0 5px;
+    border-radius: 10px 0;
+    @include respond(tab-land) {
+      font-size: 13px;
+    }
+      @include respond(tab-port) {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  
+  }
+
+  &__iconWiFi {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5485f6;
+    padding: 0 6px;
+    border-radius: 5px;
+    @include respond(tab-land) {
+      font-size: 13px;
+    }
+  }
+
+  &__card-price {
+    color: #e15858;
+    font-weight: 400;
+    font-size: 18px;
+    @include respond(tab-land) {
+      font-size: 14px;
+    }
+  }
+}
